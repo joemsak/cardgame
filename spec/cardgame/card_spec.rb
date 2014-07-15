@@ -3,22 +3,24 @@ require 'cardgame/card/buildable_card'
 
 module Cardgame
   describe Card do
+    let(:card) { Card.new }
+
     describe '#description' do
-      subject { Card.new.description }
+      subject { card.description }
       it { should be_empty }
     end
   end
 
   describe BuildableCard do
+    let(:card) { BuildableCard.new }
+
     describe '#build_cost' do
-      subject { BuildableCard.new.build_cost }
+      subject { card.build_cost }
       it { should eq(1) }
     end
 
     describe '#description' do
-      let(:card) { BuildableCard.new }
       subject { card.description }
-
       it { should include("Build cost: #{card.build_cost}") }
     end
   end
