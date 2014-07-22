@@ -1,5 +1,6 @@
 require 'cardgame/card'
 require 'cardgame/card/buildable_card'
+require 'cardgame/card/action_card'
 
 module Cardgame
   describe Card do
@@ -22,6 +23,15 @@ module Cardgame
     describe '#description' do
       subject { card.description }
       it { should include("Build cost: #{card.build_cost}") }
+    end
+  end
+
+  describe ActionCard do
+    let(:card) { ActionCard.new }
+
+    describe '#description' do
+      subject { card.description }
+      it { should_not be_empty }
     end
   end
 end
