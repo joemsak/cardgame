@@ -1,6 +1,6 @@
 module Cardgame
   class BuildableCard < Card
-    def description
+    def display
       "Build cost: #{build_cost}"
     end
 

@@ -7,7 +7,7 @@ module Cardgame
       @action = Action.random
     end
 
-    def description
+    def display
       "Name: #{@action.name}\nDescription: #{@action.description}"
     end
   end

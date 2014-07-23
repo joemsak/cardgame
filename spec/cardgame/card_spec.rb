@@ -6,8 +6,8 @@ module Cardgame
   describe Card do
     let(:card) { Card.new }
 
-    describe '#description' do
-      subject { card.description }
+    describe '#display' do
+      subject { card.display }
       it { should be_empty }
     end
   end
@@ -20,8 +20,8 @@ module Cardgame
       it { should eq(1) }
     end
 
-    describe '#description' do
-      subject { card.description }
+    describe '#display' do
+      subject { card.display }
       it { should include("Build cost: #{card.build_cost}") }
     end
   end
@@ -36,8 +36,8 @@ module Cardgame
       end
     end
 
-    describe '#description' do
-      subject { card.description }
+    describe '#display' do
+      subject { card.display }
       it { should_not be_empty }
     end
   end
