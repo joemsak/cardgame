@@ -10,7 +10,7 @@ module Cardgame
     end
 
     def description
-      @action.map { |attribute| "#{attribute[0].capitalize}: #{attribute[1]}" }.join("\n")
+      @action.map { |a| "#{a[0].capitalize}: #{a[1]}" }.join("\n")
     end
   end
 end
