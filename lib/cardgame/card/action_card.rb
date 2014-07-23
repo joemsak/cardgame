@@ -12,7 +12,17 @@ module Cardgame
     end
 
     def description
-      "ACTION\nName: #{@action[:name]}\nDescription: #{@action[:description]}"
+      str = "ACTION"
+
+      unless @action[:name].nil?
+        str += "\nName: #{@action[:name]}"
+      end
+
+      unless @action[:description].nil?
+        str += "\nDescription: #{@action[:description]}"
+      end
+
+      str
     end
   end
 end

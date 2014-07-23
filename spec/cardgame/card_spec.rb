@@ -27,11 +27,22 @@ module Cardgame
   end
 
   describe ActionCard do
-    let(:card) { ActionCard.new }
+    let(:actions) { [{name: "Example"}] }
+    let(:card) {
+      stub_const("Cardgame::ActionCard::ACTIONS", actions)
+      ActionCard.new
+    }
+
+    describe '#initialize' do
+      subject { card }
+      it "should assign an action" do
+        expect(subject.instance_variable_get(:@action)).to_not be_nil
+      end
+    end
 
     describe '#description' do
       subject { card.description }
-      it { should_not be_empty }
+      it { should include("Name: #{actions.first[:name]}") }
     end
   end
 end
