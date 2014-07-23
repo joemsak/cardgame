@@ -1,16 +1,14 @@
-require 'yaml'
+require 'cardgame/action'
 
 module Cardgame
   class ActionCard < Card
 
     def initialize
-      f = File.open("lib/cardgame/data/actions.yml", "r")
-      actions = YAML.load(f)
-      @action = actions.sample
+      @action = Action.random
     end
 
     def description
-      @action.map { |a| "#{a[0].capitalize}: #{a[1]}" }.join("\n")
+      "Name: #{@action.name}\nDescription: #{@action.description}"
     end
   end
 end
