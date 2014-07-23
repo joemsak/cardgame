@@ -1,22 +1,16 @@
+require 'yaml'
+
 module Cardgame
   class ActionCard < Card
 
     def initialize
-      @action = Yaml.load(File.read("data/actions.yml")).sample
+      f = File.open("lib/cardgame/data/actions.yml", "r")
+      actions = YAML.load(f)
+      @action = actions.sample
     end
 
     def description
-      str = "ACTION"
-
-      unless @action[:name].nil?
-        str += "\nName: #{@action[:name]}"
-      end
-
-      unless @action[:description].nil?
-        str += "\nDescription: #{@action[:description]}"
-      end
-
-      str
+      @action.map { |attribute| "#{attribute[0].capitalize}: #{attribute[1]}" }.join("\n")
     end
   end
 end

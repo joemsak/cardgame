@@ -38,7 +38,7 @@ module Cardgame
 
     describe '#description' do
       subject { card.description }
-      it { should include("Name: #{card.instance_variable_get(:@action)[:name]}") }
+      it { should_not be_empty }
     end
   end
 end
