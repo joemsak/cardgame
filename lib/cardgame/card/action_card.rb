@@ -1,14 +1,8 @@
 module Cardgame
   class ActionCard < Card
-    ACTIONS = [
-      {
-        name: "Strike",
-        description: "One rival crew goes on strike for one turn"
-      }
-    ]
 
     def initialize
-      @action = ACTIONS.sample
+      @action = Yaml.load(File.read("data/actions.yml")).sample
     end
 
     def description

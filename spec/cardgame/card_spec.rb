@@ -27,11 +27,7 @@ module Cardgame
   end
 
   describe ActionCard do
-    let(:actions) { [{name: "Example"}] }
-    let(:card) {
-      stub_const("Cardgame::ActionCard::ACTIONS", actions)
-      ActionCard.new
-    }
+    let(:card) { ActionCard.new }
 
     describe '#initialize' do
       subject { card }
@@ -42,7 +38,7 @@ module Cardgame
 
     describe '#description' do
       subject { card.description }
-      it { should include("Name: #{actions.first[:name]}") }
+      it { should include("Name: #{card.instance_variable_get(:@action)[:name]}") }
     end
   end
 end
