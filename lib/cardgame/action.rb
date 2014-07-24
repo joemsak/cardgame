@@ -8,7 +8,7 @@ module Cardgame
     end
 
     def self.random
-      self.all.sample
+      all.sample
     end
 
     def initialize(attrs={})

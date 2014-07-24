@@ -6,7 +6,7 @@ module Cardgame
 
     describe '.all' do
       subject { Action.all }
-      it { should be_a(Array) }
+      it { should include(Action) }
     end
 
     describe '.random' do
