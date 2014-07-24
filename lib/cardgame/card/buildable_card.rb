@@ -1,7 +1,9 @@
 module Cardgame
   class BuildableCard < Card
-    def description
-      "Build cost: #{build_cost}"
+    def display
+<<-DISPLAY
+Build cost: #{build_cost}
+DISPLAY
     end
 
     def build_cost

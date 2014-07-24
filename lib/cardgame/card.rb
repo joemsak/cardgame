@@ -1,6 +1,6 @@
 module Cardgame
   class Card
-    def description
+    def display
       ''
     end
   end
