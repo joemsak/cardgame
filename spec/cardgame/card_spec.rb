@@ -31,7 +31,7 @@ module Cardgame
 
     describe '#initialize' do
       subject { card }
-      it "should assign an action" do
+      it "assigns an action" do
         expect(subject.instance_variable_get(:@action)).to_not be_nil
       end
     end
